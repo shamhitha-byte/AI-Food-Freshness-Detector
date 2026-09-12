@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+
+Dataset/
+dataset_backup/
+archive/
+food_freshness_model.keras
