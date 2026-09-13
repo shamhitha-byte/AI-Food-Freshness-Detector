@@ -6,4 +6,4 @@ __pycache__/
 Dataset/
 dataset_backup/
 archive/
-food_freshness_model.keras
+/food_freshness_model.keras
