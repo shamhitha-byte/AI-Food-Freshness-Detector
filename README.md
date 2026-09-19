@@ -1,49 +1,62 @@
-# AI Food Freshness Detector
+# 🍎 AI Food Freshness Detector
 
-## Project Overview
+An AI-based web application that uses Deep Learning to classify food images as **Fresh** or **Rotten**.
 
-AI Food Freshness Detector is a deep learning project that classifies food images as **Fresh** or **Rotten**.
+## 📌 Project Overview
 
-The project uses **MobileNetV2 transfer learning** and provides a simple Streamlit web application for food freshness prediction.
+This project uses a **MobileNetV2-based Convolutional Neural Network (CNN)** to detect the freshness of food from an uploaded image.
 
-## Features
+The application is developed using **Python and Streamlit**.
 
-- Fresh or Rotten food classification
-- MobileNetV2-based deep learning model
-- Image preprocessing and data augmentation
-- Prediction confidence score
-- Streamlit web interface
-- Model evaluation and performance graphs
+## 🧠 Model
 
-## Technologies Used
+- Model: MobileNetV2
+- Transfer Learning: Yes
+- Image Size: 160 × 160
+- Optimizer: Adam
+- Loss Function: Binary Crossentropy
+- Classes:
+  - Fresh
+  - Rotten
 
-- Python
-- TensorFlow
-- Keras
-- MobileNetV2
-- NumPy
-- Matplotlib
-- Pillow
-- Scikit-learn
-- Streamlit
+## 📊 Dataset
 
-## Model
+The project uses the **Fruits and Vegetables Dataset** containing approximately **12,000 images**.
 
-The project uses **MobileNetV2** with ImageNet pretrained weights.
+The dataset contains fresh and rotten categories of:
 
-Transfer learning is used to extract useful features from food images and classify them into two classes:
+- Apple
+- Banana
+- Mango
+- Orange
+- Strawberry
+- Bell Pepper
+- Carrot
+- Cucumber
+- Potato
+- Tomato
 
-- Fresh
-- Rotten
+The dataset is divided into:
 
-## Results
+- Training set
+- Validation set
+- Test set
 
-**Test Accuracy: 83.33%**
+## 🎯 Model Performance
 
-The model correctly classified **20 out of 24 test images**.
+| Metric | Result |
+|---|---:|
+| Test Images | 1,815 |
+| Test Accuracy | **95.32%** |
+| Test Loss | **0.1291** |
+| Correct Predictions | 1,730 |
+| Incorrect Predictions | 85 |
 
 ### Confusion Matrix
 
 ```text
-[[11, 1],
- [ 3, 9]]
+                 Predicted
+              Fresh   Rotten
+
+Actual Fresh    890      36
+Actual Rotten    49     840

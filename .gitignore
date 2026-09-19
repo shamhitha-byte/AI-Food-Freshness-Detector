@@ -4,6 +4,8 @@ __pycache__/
 .streamlit/secrets.toml
 
 Dataset/
+Dataset_v2/
 dataset_backup/
 archive/
+
 /food_freshness_model.keras

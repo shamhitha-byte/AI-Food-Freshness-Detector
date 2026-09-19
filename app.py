@@ -2,7 +2,6 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 
 # ==========================================
@@ -54,14 +53,14 @@ st.markdown("""
 
 
 # ==========================================
-# LOAD MODEL
+# LOAD V2 MODEL
 # ==========================================
 
 @st.cache_resource
 def load_model():
 
     return tf.keras.models.load_model(
-        "model/food_freshness_model.keras"
+        "model/best_food_freshness_model_v2.keras"
     )
 
 
@@ -119,13 +118,11 @@ if uploaded_file is not None:
     # Convert to array
     img_array = np.array(resized_image)
 
-    # MobileNetV2 preprocessing
-    img_array = preprocess_input(img_array)
-
     # Add batch dimension
     img_array = np.expand_dims(img_array, axis=0)
 
     # Prediction
+    # The V2 model already performs MobileNetV2 preprocessing
     prediction = model.predict(
         img_array,
         verbose=0
@@ -214,11 +211,11 @@ st.write(
 )
 
 st.write(
-    "**Test Accuracy:** 83.33%"
+    "**Test Accuracy:** 95.32%"
 )
 
 st.write(
-    "**Dataset:** Kaggle Food Freshness Dataset"
+    "**Dataset:** Fruits and Vegetables Dataset (12,000 images)"
 )
 
 st.divider()
